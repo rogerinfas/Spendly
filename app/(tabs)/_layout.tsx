@@ -1,33 +1,43 @@
 import { Tabs } from 'expo-router';
+import { Home, List, PieChart } from 'lucide-react-native';
 import React from 'react';
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
+        tabBarStyle: {
+          backgroundColor: '#0f172a', // slate-900
+          borderTopColor: '#1e293b', // slate-800
+          height: 60,
+          paddingBottom: 8,
+          paddingTop: 8,
+        },
+        tabBarActiveTintColor: '#3b82f6', // blue-500
+        tabBarInactiveTintColor: '#64748b', // slate-500
+        tabBarShowLabel: true,
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: 'Inicio',
+          tabBarIcon: ({ color }) => <Home color={color} size={24} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="transactions"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Movimientos',
+          tabBarIcon: ({ color }) => <List color={color} size={24} />,
+        }}
+      />
+      <Tabs.Screen
+        name="reports"
+        options={{
+          title: 'Reportes',
+          tabBarIcon: ({ color }) => <PieChart color={color} size={24} />,
         }}
       />
     </Tabs>
