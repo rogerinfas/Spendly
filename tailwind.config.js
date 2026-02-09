@@ -6,51 +6,39 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                background: "var(--background)",
-                foreground: "var(--foreground)",
-                card: {
-                    DEFAULT: "var(--card)",
-                    foreground: "var(--card-foreground)",
-                },
-                popover: {
-                    DEFAULT: "var(--popover)",
-                    foreground: "var(--popover-foreground)",
-                },
-                primary: {
-                    DEFAULT: "var(--primary)",
-                    foreground: "var(--primary-foreground)",
-                },
-                secondary: {
-                    DEFAULT: "var(--secondary)",
-                    foreground: "var(--secondary-foreground)",
-                },
-                muted: {
-                    DEFAULT: "var(--muted)",
-                    foreground: "var(--muted-foreground)",
-                },
-                accent: {
-                    DEFAULT: "var(--accent)",
-                    foreground: "var(--accent-foreground)",
-                },
-                destructive: {
-                    DEFAULT: "var(--destructive)",
-                    foreground: "var(--destructive-foreground)",
-                },
-                border: "var(--border)",
-                input: "var(--input)",
-                ring: "var(--ring)",
+                // Paleta de colores basada en web-misti
+                // Modo claro (valores por defecto)
+                background: '#ffffff',
+                foreground: '#1f2937',
+                card: '#ffffff',
+                'card-foreground': '#1f2937',
+                popover: '#ffffff',
+                'popover-foreground': '#1f2937',
+                primary: '#0e6749', // Color principal Jewel verde
+                'primary-foreground': '#ffffff',
+                secondary: '#6ba68a', // Color secundario
+                'secondary-foreground': '#ffffff',
+                muted: '#f5f5f5',
+                'muted-foreground': '#6b7280',
+                accent: '#f5f5f5',
+                'accent-foreground': '#1f2937',
+                destructive: '#ef4444',
+                'destructive-foreground': '#ffffff',
+                border: '#e5e7eb',
+                input: '#e5e7eb',
+                ring: '#9ca3af',
                 chart: {
-                    "1": "var(--chart-1)",
-                    "2": "var(--chart-2)",
-                    "3": "var(--chart-3)",
-                    "4": "var(--chart-4)",
-                    "5": "var(--chart-5)",
+                    "1": "#f59e0b",
+                    "2": "#10b981",
+                    "3": "#3b82f6",
+                    "4": "#f97316",
+                    "5": "#8b5cf6",
                 },
             },
             borderRadius: {
-                lg: "var(--radius)",
-                md: "calc(var(--radius) - 2px)",
-                sm: "calc(var(--radius) - 4px)",
+                lg: "0.625rem",
+                md: "0.5rem",
+                sm: "0.375rem",
             },
         },
     },
