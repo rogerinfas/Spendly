@@ -11,21 +11,21 @@ export default function TransactionsScreen() {
     }));
 
     return (
-        <SafeAreaView className="flex-1 bg-gray-100">
-            <View className="p-4 bg-white shadow-sm mb-2">
-                <Text className="text-2xl font-bold text-gray-900">Transactions</Text>
+        <SafeAreaView className="flex-1 bg-background">
+            <View className="p-4 bg-card shadow-sm mb-2 border-b border-border">
+                <Text className="text-2xl font-bold text-foreground">Transactions</Text>
             </View>
             <FlatList
                 data={transactions}
                 keyExtractor={(item) => item.id}
                 contentContainerClassName="p-4 gap-3"
                 renderItem={({ item }) => (
-                    <View className="bg-white p-4 rounded-xl shadow-sm flex-row justify-between items-center">
+                    <View className="bg-card p-4 rounded-xl shadow-sm flex-row justify-between items-center border border-border">
                         <View>
-                            <Text className="font-semibold text-gray-800">{item.title}</Text>
-                            <Text className="text-gray-500 text-xs">{item.date}</Text>
+                            <Text className="font-semibold text-foreground">{item.title}</Text>
+                            <Text className="text-muted-foreground text-xs">{item.date}</Text>
                         </View>
-                        <Text className={`font-bold ${item.type === 'income' ? 'text-green-600' : 'text-red-500'}`}>
+                        <Text className={`font-bold ${item.type === 'income' ? 'text-primary' : 'text-destructive'}`}>
                             {item.type === 'income' ? '+' : '-'}${item.amount}
                         </Text>
                     </View>
